@@ -1,0 +1,7 @@
+tensorflow==2.14.1
+mediapipe==0.10.14
+opencv-contrib-python==4.9.0.80
+numpy<2
+ml-dtypes==0.2.0
+jax==0.4.20
+jaxlib==0.4.20
