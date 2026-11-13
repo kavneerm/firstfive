@@ -1,0 +1,12 @@
+{
+ "val_participants": [
+  29302,
+  49445,
+  27610
+ ],
+ "method": "baseline per-participant accuracy gap",
+ "baseline_heldout_top1_keras": 0.6708199069101325,
+ "baseline_trained_top1_keras": 0.9364069952305246,
+ "gap": 0.10604842151400862,
+ "n_val": 13965
+}

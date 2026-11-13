@@ -1,0 +1,9 @@
+{"id": "p-d96-kd", "arch": {"dim": 96}, "epochs": 8, "distill": {"alpha": 0.5, "T": 2.0}}
+{"id": "p-d64-kd", "arch": {"dim": 64}, "epochs": 8, "distill": {"alpha": 0.5, "T": 2.0}}
+{"id": "p-d192-ctrl", "note": "recipe control: baseline architecture, our recipe, 8 epochs", "arch": {}, "epochs": 8}
+{"id": "p-d96", "note": "same as p-d96-kd without distillation", "arch": {"dim": 96}, "epochs": 8}
+{"id": "p-d128-c2e1-kd", "arch": {"dim": 128, "convs": 2, "expand": 1}, "epochs": 8, "distill": {"alpha": 0.5, "T": 2.0}}
+{"id": "p-d96-s1-kd", "arch": {"dim": 96, "stages": 1}, "epochs": 8, "distill": {"alpha": 0.5, "T": 2.0}}
+{"id": "p-d128-kd", "arch": {"dim": 128}, "epochs": 8, "distill": {"alpha": 0.5, "T": 2.0}}
+{"id": "f-d96-kd", "arch": {"dim": 96}, "epochs": 40, "distill": {"alpha": 0.5, "T": 2.0}}
+{"id": "f-d128-kd", "arch": {"dim": 128}, "epochs": 40, "distill": {"alpha": 0.5, "T": 2.0}}

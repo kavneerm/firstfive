@@ -1,0 +1,17 @@
+[Unit]
+Description=Sign-to-speech program (camera -> sign model -> speaker, LCD position messages, preview on port 5000)
+After=network.target sound.target arduino-router.service
+
+[Service]
+User=arduino
+WorkingDirectory=/home/arduino/sign_app
+Environment=SIGN_NO_XNNPACK=1
+ExecStart=/home/arduino/demo_env/bin/python -u board_live.py --volume 100
+StandardOutput=append:/home/arduino/sign_app/live.log
+StandardError=append:/home/arduino/sign_app/live.log
+# the camera or speaker may not be ready in the first seconds after power-on: try again until they are
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
