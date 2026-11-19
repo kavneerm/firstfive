@@ -2,3 +2,12 @@
 __pycache__/
 *.pyc
 .DS_Store
+.venv*/
+# Kaggle data stays out of the repo (size + competition rules)
+data/
+*.zip
+*.parquet
+clips/
+models/
+# per-clip predictions are large; the report, CSVs and charts are kept
+evaluation/results/**/predictions.npz
