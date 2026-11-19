@@ -1,0 +1,80 @@
+model weights : /workspace/outputs/aslModelENGS21-fold0-best.h5
+tested on     : fold 0 (10 file(s) in /workspace/data_islr/tfrec)
+max_len / dim : 128 / 192
+cross-check   : training log val accuracy at best epoch 70.97% vs this test 70.97% (match)
+
+================================================================
+OVERALL ACCURACY
+================================================================
+sequences tested        : 18528  (250 of 250 words present)
+top-1 accuracy          : 70.97%   (95% CI 70.31-71.62%)   [13149 correct]
+top-5 accuracy          : 88.10%   (95% CI 87.63-88.56%)
+macro (per-word) average: 70.93%   <- every word counts equally
+median word accuracy    : 71.71%
+chance level            : 0.40%
+
+words at 100%           : 0
+words at >= 90%         : 30
+words below 50%         : 26
+worst / best word       : 18.7% / 97.4%
+
+When the model is confident, how often is it right?
+  confidence >= 0.5:  66.1% of predictions, 88.1% correct
+  confidence >= 0.7:  51.7% of predictions, 93.4% correct
+  confidence >= 0.9:  31.2% of predictions, 97.7% correct
+
+================================================================
+WEAKEST 15 WORDS
+================================================================
+word                      n   top-1   most often mistaken for
+there                    75   18.7%   hesheit (10x)
+goose                    85   18.8%   duck (44x)
+kiss                     80   21.2%   kitty (20x)
+puzzle                   74   23.0%   ride (8x)
+give                     76   25.0%   gift (33x)
+snack                    70   32.9%   carrot (12x)
+pen                      81   33.3%   pencil (35x)
+close                    74   33.8%   room (6x)
+ride                     68   33.8%   jump (7x)
+go                       73   35.6%   outside (8x)
+underwear                73   37.0%   cute (18x)
+zipper                   61   39.3%   shirt (8x)
+child                    68   39.7%   clean (11x)
+will                     77   41.6%   grandma (13x)
+say                      77   42.9%   chin (20x)
+
+================================================================
+STRONGEST 10 WORDS
+================================================================
+icecream                 76   97.4%
+airplane                 76   97.4%
+high                     73   97.3%
+boy                      73   97.3%
+moon                     72   97.2%
+clown                    71   97.2%
+sick                     71   95.8%
+first                    77   94.8%
+horse                    74   94.6%
+please                   73   94.5%
+
+================================================================
+MOST COMMON MIX-UPS (true word -> what the model said)
+================================================================
+  44x  goose -> duck
+  35x  pen -> pencil
+  33x  wake -> awake
+  33x  give -> gift
+  30x  awake -> wake
+  22x  duck -> goose
+  22x  minemy -> please
+  21x  wait -> finger
+  20x  kiss -> kitty
+  20x  say -> chin
+  19x  sleepy -> sleep
+  18x  underwear -> cute
+  17x  sleep -> sleepy
+  17x  aunt -> girl
+  16x  nap -> sleep
+
+Note: per-word results rest on few examples per word, so a single word's accuracy is rough; see the CI
+columns in per_sign_accuracy.csv. The overall number is much more precise than any single word's.
