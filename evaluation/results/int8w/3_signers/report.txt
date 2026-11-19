@@ -1,0 +1,87 @@
+model         : sign_model_int8w.tflite  (tflite, XNNPACK off, one clip at a time, sign_app/sign_infer_lite.py)
+tested on     : 3 hardest fold-0 signers (the model_search validation set)
+signers       : 29302, 49445, 27610
+
+================================================================
+OVERALL ACCURACY
+================================================================
+sequences tested        : 13965  (250 of 250 words present)
+top-1 accuracy          : 67.15%   (95% CI 66.36-67.92%)   [9377 correct]
+top-5 accuracy          : 85.91%   (95% CI 85.32-86.47%)
+macro (per-word) average: 67.01%   <- every word counts equally
+median word accuracy    : 67.86%
+chance level            : 0.40%
+
+words at 100%           : 0
+words at >= 90%         : 21
+words below 50%         : 37
+worst / best word       : 15.9% / 96.6%
+unusable clips          : 0  (no landmarks at all; left out)
+
+When the model is confident, how often is it right?
+  confidence >= 0.5:  61.0% of predictions, 86.7% correct
+  confidence >= 0.7:  45.8% of predictions, 92.6% correct
+  confidence >= 0.9:  25.6% of predictions, 97.2% correct
+
+================================================================
+WEAKEST 15 WORDS
+================================================================
+word                      n   top-1   most often mistaken for
+give                     63   15.9%   gift (32x)
+zipper                   44   18.2%   shirt (9x)
+ride                     50   22.0%   jump (7x)
+goose                    65   24.6%   duck (27x)
+there                    56   25.0%   hesheit (10x)
+puzzle                   55   27.3%   fall (6x)
+go                       53   30.2%   owie (7x)
+close                    56   30.4%   room (6x)
+white                    51   31.4%   zebra (7x)
+child                    48   33.3%   clean (10x)
+red                      53   34.0%   say (9x)
+kiss                     61   34.4%   food (13x)
+vacuum                   51   35.3%   puzzle (6x)
+book                     55   36.4%   boat (5x)
+carrot                   64   37.5%   chocolate (15x)
+
+================================================================
+STRONGEST 10 WORDS
+================================================================
+icecream                 58   96.6%
+airplane                 57   96.5%
+moon                     54   96.3%
+high                     54   96.3%
+boy                      54   96.3%
+clown                    53   96.2%
+first                    58   94.8%
+black                    56   94.6%
+sick                     52   94.2%
+owl                      57   93.0%
+
+================================================================
+MOST COMMON MIX-UPS (true word -> what the model said)
+================================================================
+   32x  give -> gift
+   27x  goose -> duck
+   27x  wake -> awake
+   21x  duck -> goose
+   21x  minemy -> please
+   18x  awake -> wake
+   18x  pen -> pencil
+   17x  aunt -> girl
+   16x  look -> see
+   16x  say -> chin
+   15x  carrot -> chocolate
+   14x  cat -> kitty
+   14x  grandma -> farm
+   14x  sleep -> sleepy
+   13x  hear -> ear
+
+================================================================
+BY SIGNER
+================================================================
+  29302    n=4722   top-1 59.13%  (95% CI 57.7-60.5%)
+  49445    n=4968   top-1 70.31%  (95% CI 69.0-71.6%)
+  27610    n=4275   top-1 72.33%  (95% CI 71.0-73.6%)
+
+Note: per-word results rest on few examples per word, so a single word's accuracy is rough; see the CI
+columns in per_sign_accuracy.csv. The overall number is much more precise than any single word's.

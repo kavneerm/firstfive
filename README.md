@@ -17,9 +17,10 @@ Accuracy on signers the model never saw during training (top-1 = its first guess
 
 | Test set | Clips | Top-1 | Top-5 | Source |
 |---|---|---|---|---|
-| Fold 0: 4 unseen signers | 18,528 | not yet run on this model (70.97% for the float version) | | `evaluation/evaluate.py` |
-| 3 of those signers (the hardest) | 13,965 | 67.16% | 85.92% | `model_search/eval_candidate.py` |
+| Fold 0: 4 unseen signers | 18,528 | **70.93%** | 88.22% | [`evaluation/results/int8w/`](evaluation/results/int8w/report.txt) |
+| 3 of those signers (the hardest) | 13,965 | 67.15% | 85.91% | [`evaluation/results/int8w/3_signers/`](evaluation/results/int8w/3_signers/report.txt) |
 
+The original float model scored 70.97% on fold 0, so the 8-bit version costs 0.04 points (about 7 clips).
 Chance is 0.4%. The ~89% figures on the Kaggle leaderboard are not on unseen signers, so they are not comparable.
 
 ## What's here

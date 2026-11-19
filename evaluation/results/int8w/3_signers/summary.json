@@ -1,0 +1,41 @@
+{
+ "sequences": 13965,
+ "classes_in_test": 250,
+ "classes_total": 250,
+ "unusable_sequences": 0,
+ "top1_accuracy": 0.6714643752237737,
+ "top1_ci": [
+  0.6636281334236256,
+  0.6792063074794767
+ ],
+ "correct": 9377,
+ "top5_accuracy": 0.8590762620837809,
+ "top5_ci": [
+  0.8532065605625961,
+  0.8647484629949763
+ ],
+ "macro_accuracy": 0.670075698787763,
+ "median_word_accuracy": 0.6785714285714286,
+ "words_at_100pct": 0,
+ "words_at_90pct_or_more": 21,
+ "words_below_50pct": 37,
+ "min_word_accuracy": 0.15873015873015872,
+ "max_word_accuracy": 0.9655172413793104,
+ "by_confidence": [
+  {
+   "threshold": 0.5,
+   "share_of_predictions": 0.6098818474758324,
+   "accuracy_when_that_confident": 0.8665022895385699
+  },
+  {
+   "threshold": 0.7,
+   "share_of_predictions": 0.4582885785893305,
+   "accuracy_when_that_confident": 0.92625
+  },
+  {
+   "threshold": 0.9,
+   "share_of_predictions": 0.2555674901539563,
+   "accuracy_when_that_confident": 0.97226113757355
+  }
+ ]
+}

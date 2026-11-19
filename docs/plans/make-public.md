@@ -27,7 +27,7 @@ User said "go" (2026-11-19): delete Cole's old charts, run his evaluation on the
 - [x] `evaluation/test_evaluate.py`: metrics checked against brute-force on synthetic logits; end-to-end on real_mini
       with predictions cross-checked against `LitePredictor` clip by clip.
 - [x] README.md, LICENSE (MIT), .gitignore for data/zip/venv/eval outputs.
-- [ ] Full run on fold 0 (18,528 clips; needs EC2 or a Kaggle download — user's call; starting EC2 was blocked by the
+- [x] Full run on fold 0 (18,528 clips; needs EC2 or a Kaggle download — user's call; starting EC2 was blocked by the
       permission check 2026-11-19), commit results to
       `evaluation/results/int8w/`.
 
@@ -42,3 +42,11 @@ User said "go" (2026-11-19): delete Cole's old charts, run his evaluation on the
 - Known display-only difference: tie order among equal-count mix-ups differs from Cole's (his rule unknown).
 - Cross-checks on the full run: 3-signer subset top-1 = 67.16% (LEARNINGS.md, same model, same path); 4-signer
   top-1 within ~0.2 points of Cole's 70.97% for the float model (8-bit weights moved it +0.09 on the 3 signers).
+
+## Result (2026-11-19, c6i.2xlarge — no g5 capacity; type restored to g5.2xlarge, instance stopped, SSH rule removed)
+- 18,528 clips, 0 unusable, 1070 s. Top-1 70.93% (Cole, float: 70.97%), top-5 88.22% (88.10%), calibration 6.29 (6.34).
+- Per signer within 0.4 points of Cole's, same clip counts. 3-signer subset 67.15% vs harness 0.6716 (≈1 clip; the
+  harness preprocesses in TF, this path in numpy).
+- Clip-length and hand-detection bin counts differ slightly from Cole's (e.g. ≤10 frames 2248 vs 2235; totals equal):
+  here length/hand share count frames after prepare_kaggle.py dropped all-empty frames; his pipeline evidently
+  counted differently. His script is unavailable, so left as is and noted.
